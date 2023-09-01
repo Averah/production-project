@@ -12,10 +12,10 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
             <div className={cls.links}>
                 <AppLink to='/' className={cls.mainLink} theme={AppLinkTheme.SECONDARY}>
-                    Main
+                    Главная
                 </AppLink>
                 <AppLink to='/about' theme={AppLinkTheme.SECONDARY}>
-                    About
+                    О сайте
                 </AppLink>
             </div>
         </div>

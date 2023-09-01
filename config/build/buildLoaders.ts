@@ -1,8 +1,24 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BuildOptions } from './types/config';
+import ReactRefreshTypeScript from 'react-refresh-typescript'
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+    }
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env'],
+            }
+        }
+    }
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,
@@ -24,16 +40,20 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         ],
     }
 
+
+
     const typescriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        loader: 'ts-loader',
         exclude: /node_modules/,
+        options: {
+            getCustomTransformers: () => ({
+                before: [ReactRefreshTypeScript()]
+            }),
+        }
     }
 
-    const svgLoader = {
-        test: /\.svg$/,
-        use: ['@svgr/webpack']
-    }
+
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -45,9 +65,10 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     }
 
     return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
-        svgLoader,
-        fileLoader,
     ]
 }
