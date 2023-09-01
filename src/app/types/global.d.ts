@@ -1,5 +1,5 @@
-declare module "*.module.css";
-declare module "*.module.scss";
+declare module '*.module.css';
+declare module '*.module.scss';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
@@ -10,4 +10,4 @@ declare module '*.svg' {
     export default SVG;
 }
 
-declare const __IS_DEV__ : boolean
+declare const __IS_DEV__ : boolean;

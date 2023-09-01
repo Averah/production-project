@@ -6,16 +6,15 @@ import { BuildOptions } from './types/config';
 import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-
-    const { paths, mode, isDev } = options
+    const { paths, mode, isDev } = options;
 
     return {
-        mode: mode,
+        mode,
         entry: paths.entry,
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,
-            clean: true
+            clean: true,
         },
         plugins: buildPlugins(options),
         module: {
