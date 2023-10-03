@@ -21,8 +21,18 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
     const extend = t('Развернуть');
 
     return (
-        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, className)}>
-            <button type="button" onClick={onTogle}>{collapsed ? extend : collapse}</button>
+        <div
+            data-testid="sidebar"
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, className)}
+        >
+            <button
+                data-testid="sidebar-toggle"
+                type="button"
+                onClick={onTogle}
+            >
+                {collapsed ? extend : collapse}
+
+            </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.language} />
