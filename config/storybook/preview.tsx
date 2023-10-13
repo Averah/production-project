@@ -12,14 +12,6 @@ export const preview: Preview = {
                 date: /Date$/,
             },
         },
-        // decorators: [
-        //     (Story) => (
-        //         <StyleDecorator>
-        //             <Story />
-        //         </StyleDecorator>
-        //     ),
-        //     ThemeDecorator(),
-        // ],
     },
 };
 
