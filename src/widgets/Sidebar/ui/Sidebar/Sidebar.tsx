@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
-import cls from './Sidebar.module.scss';
 import { Button } from 'shared/ui/Button/Button';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;
