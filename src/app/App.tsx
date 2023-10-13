@@ -1,4 +1,4 @@
-import './Styles/index.scss';
+import './styles/index.scss';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
