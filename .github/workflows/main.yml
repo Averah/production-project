@@ -9,16 +9,16 @@ jobs:
     runs-on: windows-2019
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [ 18.x ]
 
-    steps:
+     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci --legacy-peer-deps
+        run: npm install
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -28,7 +28,7 @@ jobs:
       - name: linting css
         run: npm run lint:scss
       - name: unit testing
-      if: always()
+        if: always()
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
