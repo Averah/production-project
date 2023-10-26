@@ -10,7 +10,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    config.resolve?.modules?.push(paths.src);
+    config.resolve?.modules?.unshift(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     // @ts-ignore
@@ -27,6 +27,12 @@ export default ({ config }: {config: webpack.Configuration}) => {
         use: ['@svgr/webpack'],
     });
     config.module?.rules?.push(buildCssLoader(true));
+
+    config?.plugins?.push(
+        new webpack.DefinePlugin({
+            __IS_DEV__: false,
+        }),
+    );
 
     return config;
 };
