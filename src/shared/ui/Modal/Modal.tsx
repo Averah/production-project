@@ -2,6 +2,7 @@ import React, {
     FC, ReactNode, useEffect, useCallback,
 } from 'react';
 import classNames from 'classnames';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
@@ -46,7 +47,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, className)}>
+            <div className={classNames(cls.Modal, mods, className, 'app_modal')}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}
