@@ -9,6 +9,8 @@
     "Перезагрузить страницу": "Reload page",
     "Войти": "Log In",
     "Увеличить": "increment",
-    "Убавить": "decrement"
+    "Убавить": "decrement",
+    "Введите логин": "Enter username",
+    "Введите пароль": "Enter password"
   }
   

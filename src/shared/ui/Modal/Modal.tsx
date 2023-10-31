@@ -45,6 +45,10 @@ export const Modal: FC<ModalProps> = (props) => {
         };
     }, [isOpen, closeHandler]);
 
+    if (!isOpen) {
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, className, 'app_modal')}>
