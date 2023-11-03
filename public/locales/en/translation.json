@@ -8,9 +8,12 @@
     "Произошла непредвиденная ошибка": "An unexpected error occurred",
     "Перезагрузить страницу": "Reload page",
     "Войти": "Log In",
+    "Выйти": "Log Out",
     "Увеличить": "increment",
     "Убавить": "decrement",
     "Введите логин": "Enter username",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Authorization form",
+    "Некорректный логин или пароль": "Incorrect username or password"
   }
   

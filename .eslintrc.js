@@ -45,7 +45,7 @@ module.exports = {
         'i18next/no-literal-string': [
             'error',
             { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'linebreak-style': 'off',
         'no-param-reassign': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
