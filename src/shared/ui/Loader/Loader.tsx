@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import classNames from 'classnames';
 import './Loader.scss';
 
@@ -6,7 +6,7 @@ interface LoaderProps {
   className?: string;
 }
 
-export const Loader: FC<LoaderProps> = ({ className }) => (
+export const Loader: FC<LoaderProps> = memo(({ className }:LoaderProps) => (
     <div className={classNames('lds-default', className)}>
         <div />
         <div />
@@ -22,4 +22,4 @@ export const Loader: FC<LoaderProps> = ({ className }) => (
         <div />
     </div>
 
-);
+));
