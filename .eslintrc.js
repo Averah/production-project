@@ -25,6 +25,8 @@ module.exports = {
         'react-hooks',
     ],
     rules: {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error", { args: "none" }],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
@@ -55,6 +57,7 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

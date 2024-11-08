@@ -8,6 +8,7 @@ export default {
     clearMocks: true,
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
