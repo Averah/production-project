@@ -5,7 +5,7 @@ module.exports = {
         jest: true,
     },
     extends:
-    ['plugin:react/recommended',
+    [
         'airbnb',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
@@ -25,8 +25,8 @@ module.exports = {
         'react-hooks',
     ],
     rules: {
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": ["error", { args: "none" }],
+        "no-unused-vars": 0,
+        "@typescript-eslint/no-unused-vars": 2,
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
