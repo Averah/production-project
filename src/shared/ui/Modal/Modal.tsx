@@ -18,7 +18,7 @@ export const Modal: FC<ModalProps> = (props) => {
         className, children, isOpen, onClose,
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [cls.opened]: isOpen,
     };
 
@@ -27,7 +27,7 @@ export const Modal: FC<ModalProps> = (props) => {
     };
 
     const closeHandler = useCallback(() => {
-        onClose();
+        onClose?.();
     }, [onClose]);
 
     useEffect(() => {
